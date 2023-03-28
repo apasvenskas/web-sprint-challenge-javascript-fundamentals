@@ -25,10 +25,16 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read.
 
 1. Explain the differences between `.map`, `.reduce` and `.filter` and describe a use case for each. 
+.Map: is ised to crete a new array from an existing one.
+.filter: applies a conditional statement to the array, and if true elements are pushed to a new array. 
+.reduce: reduces the array to one value usesually used to get the averegeges. 
 
 2. Explain the difference between a callback and a higher order function.
+A callback function: is a function being passed into another as a argument. 
+A higher order function: is the one that takes another function as an input/argument or returns function as an output. 
 
 3. Explain what a closure is.
+Closure; when functions are bundled togrther and one is inside another and is inclosed with in it scope. with acces to higher scope. 
 
 4. Describe the four principles of the 'this' keyword.
 
