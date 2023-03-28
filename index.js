@@ -72,7 +72,7 @@ const zooAnimals = [
     return displayNames;
   }
  // animalNames(zooAnimals);
-  console.log('T1', animalNames(zooAnimals));
+  console.log('R1', animalNames(zooAnimals));
   
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
@@ -90,7 +90,7 @@ const zooAnimals = [
       return array.animal_name.toLowerCase('animal_name');
     });
   }
- console.log('T2', lowerCaseNames(zooAnimals));
+ console.log('R2', lowerCaseNames(zooAnimals));
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
   The zoo is concerned about animals with a lower population count. 
@@ -106,7 +106,7 @@ const zooAnimals = [
     });
     return pops;
   }
-  console.log('T3', lowPopulationAnimals(zooAnimals));
+  console.log('R3', lowPopulationAnimals(zooAnimals));
 
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
   The zoo needs to know their total animal population across the United States. 
@@ -123,7 +123,7 @@ const zooAnimals = [
     }, 0)
     return avrAnimalPop;
   }
-console.log('T4', USApop(zooAnimals));
+console.log('TR', USApop(zooAnimals));
   
   
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
@@ -138,7 +138,7 @@ console.log('T4', USApop(zooAnimals));
   function consume(a, b, cb){
     return cb(a, b);
   }
-  console.log('T5', consume('Marry', 'Poppins', greeting));
+  console.log('TCB', consume('Marry', 'Poppins', greeting));
  
   
   // 🦁🦁🦁 Step 2: Create several functions to callback with consume(); 🦁🦁🦁
@@ -151,7 +151,7 @@ console.log('T4', USApop(zooAnimals));
 function add(num1, num2){
     return num1 + num2;
   }
-  console.log(add(3, 4));
+  console.log('CB2', add(3, 4));
 
 
 /* Use multiply to do the following:
@@ -162,7 +162,7 @@ function add(num1, num2){
 function multiply(num1, num2){
    return (num1 * num2);
   }
-  console.log(multiply(5, 6))
+  console.log('CB3', multiply(5, 6))
 
 
  /* Use greeting to do the following:
@@ -174,7 +174,7 @@ function multiply(num1, num2){
 function greeting(firstName, lastName){
    return `Hello ${firstName} ${lastName}, nice to meet you!`
   }
-  console.log('Audrius', 'Pasvenskas'); 
+  console.log('CB4', 'Audrius', 'Pasvenskas'); 
   
   
 // 🦁🦁🦁 Step 3: Check your work by un-commenting the following calls to consume(): 🦁🦁🦁 
@@ -230,16 +230,13 @@ CuboidMaker.prototype.surfaceArea=function(){
   Add properties and values of length: 4, width: 5, and height: 5 to cuboid. */
 
 
-
-
+  const cuboid = new CuboidMaker(4, 5, 5);
+  console.log('T3', cuboid.volume(), cuboid.surfaceArea());
 
 // 🐴🐴🐴 Test your volume and surfaceArea methods by uncommenting the logs below: 🐴🐴🐴
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
- //console.log(cuboid.volume()); // 100
+// console.log(cuboid.volume()); // 100
 // console.log(cuboid.surfaceArea()); // 130
-//const num1 = new CuboidMaker(1, 3, 4);
-//console.log('T3.2', num1.volume());
-//console.log('T3.3', num1.surfaceArea())
 
 // 🦄🦄🦄 Topic 4: Classes 🦄🦄🦄 //
 //Using CuboidMakerTwo, take your prototypes from above and refactor into class syntax. Then, create an object called cuboidTwo that uses the new keyword to use our CuboidMakerTwo class.
@@ -250,14 +247,20 @@ class CuboidMakerTwo{
     this.width = width;
     this.height = height;
   }
+  volume() {
+    return (this.length * this.width * this.height);
+  }
+  surfaceArea() {
+    return (2* ((this.length * this.width) + (this.length * this.height) + (this.width * this.height)));
+  }
 }
-
-
+const cuboidTwo = new CuboidMakerTwo(4, 4, 4);
+//console.log('T4', cuboidTwo.volume(), cuboidTwo.surfaceArea());
 
 
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄
- //console.log(cuboidTwo.volume()); // 100
- //console.log(cuboidTwo.surfaceArea()); // 130
+ console.log('T4.1', cuboidTwo.volume()); // 100
+ console.log('t4.2', cuboidTwo.surfaceArea()); // 130
 
 
 
